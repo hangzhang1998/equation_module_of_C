@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void Multiply_Guess (const char ari);
+
+void Multiply_Guess(const char ari)
+{
+    static int x, y, result, answer, counter, corret;
+    srand(time(NULL));
+       x = rand()%11;
+       y = rand()%10 +1;
+       result = x * y;
+//       printf("\n %c \n",ari);
+       printf(" %d %c %d = ", x, ari,y);
+       scanf(" %d",&answer);
+       switch (ari)
+       {
+       case '+':
+           result = x + y;
+           break;
+       case '-':
+           result = x - y;
+           break;
+       case 'X':
+           result = x * y;
+           break;
+       case '/':
+           result = x / y;
+           break;
+       default :
+           result = 0;
+       }
+       if (answer != result )
+       printf("Worry !\n");
+       else
+       {
+           printf("Right !\n");
+           corret++;
+       }
+       counter ++;
+    printf("******* THE CORRENT RATE IS %d %%. *******\n",corret*10);
+}
