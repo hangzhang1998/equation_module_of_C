@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+char Arithmetic (void);
+
+char Arithmetic(void)
+{
+    char arithmetic;
+    int i;
+    srand(time(NULL));
+    i = rand()% 4;
+    switch (i)
+    {
+    case 0:
+        arithmetic = '+';
+        break;
+    case 1:
+        arithmetic = '-';
+        break;
+    case 2:
+        arithmetic = 'X';
+        break;
+    default:
+        arithmetic = '/';
+    }
+    return arithmetic;
+}

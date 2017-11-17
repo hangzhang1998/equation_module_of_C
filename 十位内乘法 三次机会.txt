@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void Multiply_Guess (void);
+
+void Multiply_Guess(void)
+{
+    static int x, y, result, answer, counter;
+    srand(time(NULL));
+    do{
+       x = rand()%11;
+       y = rand()%11;
+       result = x * y;
+       printf(" %d x %d = ", x, y);
+       scanf(" %d",&answer);
+       if (answer != result && counter == 2)
+       printf("Worry ! You have try third times ! Test over !\n");
+       counter ++;
+    }while (counter < 3);
+}

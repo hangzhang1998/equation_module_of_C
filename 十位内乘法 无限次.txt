@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void Multiply_Guess (void);
+
+void Multiply_Guess(void)
+{
+    static int x, y, result, answer;
+    srand(time(NULL));
+    do{
+       x = rand()%11;
+       y = rand()%11;
+       result = x * y;
+       printf(" %d x %d = ", x, y);
+       scanf(" %d",&answer);
+       if (answer != result)
+       printf("Worry ! Please try again!\n");
+    }while (result != answer);
+}
